@@ -1,0 +1,84 @@
+<div class="container">
+    <form #horasForm="ngForm" (ngSubmit)="postHorasExtras(horasForm)">
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="horasExtrasService.seleccionHE._id">
+        <div class="form-group">
+            <label for="documento">Documento</label>
+            <input type="text" name="documento" #documento="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.documento" class="form-control" id="documento" placeholder="Ingrese nuemero de documento">
+        </div>
+        <div class="form-group">
+            <label for="Nombre">Nombre</label>
+            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.nombre" class="form-control" id="nombre">
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.apellido" class="form-control" id="apellido">
+        </div>
+        <div class="form-group">
+            <label for="fechaInicio">Fecha Inicio</label>
+            <input type="text" name="fechaInicio" #fechaInicio="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.fechaInicio" class="form-control" id="fechaInicio">
+        </div>
+        <div class="form-group">
+            <label for="fechaFin">Fecha Fin</label>
+            <input type="text" name="fechaFin" #fechaFin="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.fechaFin" class="form-control" id="fechaFin">
+        </div>
+        <div class="form-group">
+            <label for="horarioInicioFin">horarioTurnoInicio</label>
+            <input type="text" name="horarioTurnoInicio" #horarioTurnoInicio="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.horarioTurnoInicio" class="form-control" id="horarioInicioFin">
+        </div>
+        <div class="form-group">
+            <label for="horarioInicioFin">horarioTurnoFin</label>
+            <input type="text" name="horarioTurnoFin" #horarioTurnoFin="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.horarioTurnoFin" class="form-control" id="horarioInicioFin">
+        </div>
+        <div class="form-group">
+            <label for="horarioInicioFin">horarioInicioExtra</label>
+            <input type="text" name="horarioInicioExtra" #horarioInicioExtra="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.horarioInicioExtra" class="form-control" id="horarioInicioFin">
+        </div>
+        <div class="form-group">
+            <label for="horarioInicioFin">horarioInicioFin</label>
+            <input type="text" name="horarioInicioFin" #horarioInicioFin="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.horarioInicioFin" class="form-control" id="horarioInicioFin">
+        </div>
+
+        <div class="form-group">
+            <label for="motivo">motivo</label>
+            <input type="text" name="motivo" #motivo="ngModel" [(ngModel)]="horasExtrasService.seleccionHE.motivo" class="form-control" id="motivo">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+
+<br><br>
+
+<!-- Table a mostrar -->
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Documento</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Fecha Inicio</th>
+            <th scope="col">Fecha Fin</th>
+            <th scope="col">Horario Turno Inicio</th>
+            <th scope="col">Horario Turno Fin</th>
+            <th scope="col">Horario Inicio Extra</th>
+            <th scope="col">Horario Fin Extra</th>
+            <th scope="col">Motivo</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let horasExtras of horasExtrasService.horasExtras">
+
+            <td>{{ horasExtras.documento}}</td>
+            <td>{{ horasExtras.nombre}}</td>
+            <td>{{ horasExtras.apellido}}</td>
+            <td>{{ horasExtras.fechaInicio}}</td>
+            <td>{{ horasExtras.fechaFin}}</td>
+            <td>{{ horasExtras.horarioTurnoInicio}}</td>
+            <td>{{ horasExtras.horarioTurnoFin}}</td>
+            <td>{{ horasExtras.horarioInicioExtra}}</td>
+            <td>{{ horasExtras.horarioInicioFin}}</td>
+            <td>{{ horasExtras.motivo}}</td>
+        </tr>
+    </tbody>
+</table>
